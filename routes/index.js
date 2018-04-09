@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/push-now', function(req, res) {
+router.post('/push-now', function(req, res, next) {
   console.log('Came');
   var timestamp=new Date().getTime();
   let regID = req.body.Ids;
@@ -55,7 +55,7 @@ router.post('/push-now', function(req, res) {
 
 });
 
-router.post('/push', function (req, res) {
+router.post('/push', function (req, res, next) {
   var timestamp=new Date().getTime();
   console.log('Working');
   console.log('Body: ', req.body);
