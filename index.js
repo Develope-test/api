@@ -15,8 +15,8 @@ var jsonParser = bodyParser.json()
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-app.post('/test', function(req, res, next){
-    res.send('Done');
+app.get('/', function(req, res, next){
+    res.send('Ok');
     console.log('yes');
 });
 
