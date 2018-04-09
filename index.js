@@ -3,6 +3,7 @@ var schedule = require('node-schedule');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const path = require('path');
 const PORT = process.env.PORT || 9000;
 
 const cors = require('cors');
@@ -15,11 +16,10 @@ var jsonParser = bodyParser.json()
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-app.get('/', function(req, res, next){
-    res.send('Ok');
+app.get('/', function(req, res){
+    res.sendFile(path.join(__dirname+'/index.html'));
     console.log('yes');
 });
-
 //sendNow Push Notification
 app.post('/push-now', urlencodedParser, function(req, res) {
     console.log('Came');
