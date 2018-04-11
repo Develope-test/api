@@ -6,7 +6,7 @@ var router = express.Router();
 var FCM = require('fcm-push');
 var schedule = require('node-schedule');
 
-const cors = require('cors');
+// const cors = require('cors');
 
 
 /* GET home page. */

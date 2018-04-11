@@ -9,9 +9,29 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-const cors = require('cors');
+// const cors = require('cors');
+// app.use(cors());
 
-app.use(cors());
+app.options('/', function (req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader('Access-Control-Allow-Methods', '*');
+  res.setHeader("Access-Control-Allow-Headers", "*");
+  res.end();
+});
+
+app.options('/push', function (req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader('Access-Control-Allow-Methods', '*');
+  res.setHeader("Access-Control-Allow-Headers", "*");
+  res.end();
+});
+
+app.options('/push-now', function (req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader('Access-Control-Allow-Methods', '*');
+  res.setHeader("Access-Control-Allow-Headers", "*");
+  res.end();
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
