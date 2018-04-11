@@ -12,25 +12,10 @@ var app = express();
 // const cors = require('cors');
 // app.use(cors());
 
-app.options('/', function (req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader('Access-Control-Allow-Methods', '*');
-  res.setHeader("Access-Control-Allow-Headers", "*");
-  res.end();
-});
-
-app.options('/push', function (req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader('Access-Control-Allow-Methods', '*');
-  res.setHeader("Access-Control-Allow-Headers", "*");
-  res.end();
-});
-
-app.options('/push-now', function (req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader('Access-Control-Allow-Methods', '*');
-  res.setHeader("Access-Control-Allow-Headers", "*");
-  res.end();
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
 
 // view engine setup
