@@ -36,7 +36,7 @@ router.get('/', function(req, res, next) {
 router.post('/push', function (req, res, next) {
     var timestamp=new Date().getTime();
     console.log('Working');
-    console.log(getTime());
+    // console.log(getTime());
     console.log('Body: ', req.body);
   
   let title = req.body.title;
