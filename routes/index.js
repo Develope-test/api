@@ -79,51 +79,51 @@ router.post('/push', function (req, res, next) {
   
   });
 
-router.post('/pushNow', function(req, res, next) {
-  console.log('Came');
-  var timestamp=new Date().getTime();
-  let regID = req.body.Ids;
-  let idNew = JSON.parse(regID);
-  let title = req.body.title;
-  let msg = req.body.msg;
-  let url = req.body.url;
-  console.log('ID', regID);
-  console.log('Title: ', title);
-  console.log('Msg: ', msg);
-  console.log('Url: ', url);
+// router.post('/pushNow', function(req, res, next) {
+//   console.log('Came');
+//   var timestamp=new Date().getTime();
+//   let regID = req.body.Ids;
+//   let idNew = JSON.parse(regID);
+//   let title = req.body.title;
+//   let msg = req.body.msg;
+//   let url = req.body.url;
+//   console.log('ID', regID);
+//   console.log('Title: ', title);
+//   console.log('Msg: ', msg);
+//   console.log('Url: ', url);
 
-  var serverkey = req.body.serverKey;  
-  var fcm = new FCM(serverkey);
+//   var serverkey = req.body.serverKey;  
+//   var fcm = new FCM(serverkey);
 
-  var message = {  
-      registration_ids : idNew,
-      Notification : {
-          title : title,
-          body : msg
-      },
-      data: {
-          title: title,
-          is_background: false,
-          message: msg,
-          image: url,
-          timestamp: timestamp
-      }    
-  };
+//   var message = {  
+//       registration_ids : idNew,
+//       Notification : {
+//           title : title,
+//           body : msg
+//       },
+//       data: {
+//           title: title,
+//           is_background: false,
+//           message: msg,
+//           image: url,
+//           timestamp: timestamp
+//       }    
+//   };
 
-  console.log('Message: ',message);
-  fcm.send(message, function(err,response){  
-      if(err) {
-          console.log("Something has gone wrong !");
-          console.log(err);
-      } else {
-          console.log("Successfully sent with resposne Two :",response);
-          console.log('Data: ', message);
-          // res.send(JSON.stringify(response));
-          res.send('Done');
-      }
-  });
+//   console.log('Message: ',message);
+//   fcm.send(message, function(err,response){  
+//       if(err) {
+//           console.log("Something has gone wrong !");
+//           console.log(err);
+//       } else {
+//           console.log("Successfully sent with resposne Two :",response);
+//           console.log('Data: ', message);
+//           // res.send(JSON.stringify(response));
+//           res.send('Done');
+//       }
+//   });
 
-});
+// });
 
 
 
