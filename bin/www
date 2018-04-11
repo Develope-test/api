@@ -13,8 +13,10 @@ var http = require('http');
  */
 
 // var port = normalizePort(process.env.PORT || '9000');
+// app.set('port', port);
+
 const PORT = process.env.PORT || 9000;
-app.set('port', port);
+app.set('port', PORT);
 
 /**
  * Create HTTP server.
