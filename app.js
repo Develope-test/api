@@ -1,5 +1,4 @@
 var createError = require('http-errors');
-var cors = require('cors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -11,7 +10,8 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 // use it before all route definitions
-app.use(cors({origin: 'http://localhost:3000'}));
+var cors = require('cors');
+app.use(cors());
 
 app.configure()
 // view engine setup

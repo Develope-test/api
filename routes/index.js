@@ -1,14 +1,14 @@
 var express = require('express');
-var cors = require('cors');
+
 var router = express.Router();
 
-router.use(cors());
+// router.use(cors());
 
 var FCM = require('fcm-push');
 var schedule = require('node-schedule');
 
 // const cors = require('cors');
-
+var cors = require('cors');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
