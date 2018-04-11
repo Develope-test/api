@@ -1,5 +1,4 @@
 var express = require('express');
-
 var router = express.Router();
 
 // router.use(cors());
@@ -7,8 +6,8 @@ var router = express.Router();
 var FCM = require('fcm-push');
 var schedule = require('node-schedule');
 
-// const cors = require('cors');
-var cors = require('cors');
+const cors = require('cors');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

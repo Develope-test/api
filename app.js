@@ -9,11 +9,10 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-// use it before all route definitions
-var cors = require('cors');
+const cors = require('cors');
+
 app.use(cors());
 
-app.configure()
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
