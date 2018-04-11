@@ -9,10 +9,17 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-var cors = require('cors');
+var allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', "*");
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+}
 
-// use it before all route definitions
-app.use(cors({origin: 'http://localhost:3000'}));
+app.configure(function() {
+  app.use(allowCrossDomain);
+  //some other code
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
