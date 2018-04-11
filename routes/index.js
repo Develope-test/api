@@ -4,7 +4,7 @@ var router = express.Router();
 var FCM = require('fcm-push');
 var schedule = require('node-schedule');
 
-const cors = require('cors');
+// const cors = require('cors');
 // router.use(cors());
 
 /* GET home page. */
@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/push', cors(), function (req, res, next) {
+router.post('/push', function (req, res, next) {
     var timestamp=new Date().getTime();
     console.log('Working');
     console.log('Body: ', req.body);
